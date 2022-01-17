@@ -1,0 +1,22 @@
+{
+    "name": "micro/plugin-event-emitter",
+    "description": "MIcro Framework: Application plugin for provide Event Emitter",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Plugin\\EventEmitter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stanislau.Komar",
+            "email": "stanislau_komar@epam.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "micro/event-emitter": ">= 0.1"
+    }
+}
