@@ -19,7 +19,7 @@ class EventsFacade implements EventsFacadeInterface
      * @param EventEmitterFactoryInterface $eventEmitterFactory
      */
     public function __construct(
-        private EventEmitterFactoryInterface $eventEmitterFactory
+    private EventEmitterFactoryInterface $eventEmitterFactory
     )
     {
         $this->eventEmitter = $this->eventEmitterFactory->create();
