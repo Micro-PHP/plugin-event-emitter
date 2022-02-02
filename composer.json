@@ -16,6 +16,6 @@
         }
     ],
     "require": {
-        "micro/event-emitter": ">= 0.1"
+        "micro/event-emitter": "^0.1"
     }
 }
