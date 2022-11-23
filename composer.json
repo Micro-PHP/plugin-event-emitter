@@ -1,6 +1,6 @@
 {
     "name": "micro/plugin-event-emitter",
-    "description": "Micro Framework: Application plugin for provide Event Emitter",
+    "description": "Micro Framework: Application plugin to provide an event emitter",
     "type": "library",
     "license": "MIT",
     "version": "1.0",
