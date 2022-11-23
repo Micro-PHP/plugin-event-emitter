@@ -16,6 +16,7 @@
         }
     ],
     "require": {
-        "micro/event-emitter": "^1"
+        "micro/event-emitter": "^1",
+        "micro/kernel": "^1"
     }
 }
