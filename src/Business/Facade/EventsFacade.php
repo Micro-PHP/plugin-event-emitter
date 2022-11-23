@@ -13,13 +13,13 @@ class EventsFacade implements EventsFacadeInterface
     /**
      * @var EventEmitterInterface
      */
-    private EventEmitterInterface $eventEmitter;
+    private readonly EventEmitterInterface $eventEmitter;
 
     /**
      * @param EventEmitterFactoryInterface $eventEmitterFactory
      */
     public function __construct(
-    private EventEmitterFactoryInterface $eventEmitterFactory
+        private readonly EventEmitterFactoryInterface $eventEmitterFactory
     )
     {
         $this->eventEmitter = $this->eventEmitterFactory->create();
@@ -39,5 +39,15 @@ class EventsFacade implements EventsFacadeInterface
     public function emit(EventInterface $event): void
     {
         $this->eventEmitter->emit($event);
+    }
+
+    /**
+     * @TODO: Provide events to Global
+     *
+     * {@inheritDoc}
+     */
+    public function createEventEmitter(bool $provideEventsToGlobal = false): EventEmitterInterface
+    {
+        return $this->eventEmitterFactory->create();
     }
 }
