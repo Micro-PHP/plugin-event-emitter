@@ -2,6 +2,7 @@
 
 namespace Micro\Plugin\EventEmitter;
 
+use Micro\Component\EventEmitter\EventEmitterInterface;
 use Micro\Component\EventEmitter\EventInterface;
 use Micro\Component\EventEmitter\ListenerProviderInterface;
 
@@ -19,4 +20,9 @@ interface EventsFacadeInterface
      * @return void
      */
     public function emit(EventInterface $event): void;
+
+    /**
+     * @return EventEmitterInterface
+     */
+    public function createEventEmitter(): EventEmitterInterface;
 }
