@@ -3,7 +3,7 @@
     "description": "Micro Framework: Application plugin to provide an event emitter",
     "type": "library",
     "license": "MIT",
-    "version": "1.0",
+    "version": "1.1",
     "autoload": {
         "psr-4": {
             "Micro\\Plugin\\EventEmitter\\": "src/"
@@ -17,6 +17,8 @@
     ],
     "require": {
         "micro/event-emitter": "^1",
-        "micro/kernel": "^1"
+        "micro/plugin-locator": "^1",
+        "micro/kernel": "^1",
+        "micro/autowire": "^1"
     }
 }
