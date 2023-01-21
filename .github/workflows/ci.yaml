@@ -36,6 +36,8 @@ jobs:
 
       - name: "Composer install"
         uses: "ramsey/composer-install@v2"
+        env:
+          COMPOSER_ROOT_VERSION: 1.9
         with:
           dependency-versions: "${{ matrix.dependency-versions }}"
           composer-options: "--prefer-dist --no-progress"
