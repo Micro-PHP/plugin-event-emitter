@@ -1,9 +1,16 @@
 <?php
 
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\EventEmitter;
 
-use Micro\Component\DependencyInjection\Autowire\AutowireHelperFactory;
-use Micro\Component\DependencyInjection\Autowire\AutowireHelperFactoryInterface;
 use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
 use Micro\Component\DependencyInjection\Container;
 use Micro\Component\EventEmitter\EventEmitterFactoryInterface;
@@ -18,15 +25,9 @@ use Micro\Plugin\Locator\Facade\LocatorFacadeInterface;
 
 class EventEmitterPlugin implements DependencyProviderInterface
 {
-    /**
-     * @var LocatorFacadeInterface
-     */
-    private readonly LocatorFacadeInterface $locatorFacade;
+    private LocatorFacadeInterface $locatorFacade;
 
-    /**
-     * @var AutowireHelperInterface $autowireHelper
-     */
-    private readonly AutowireHelperInterface $autowireHelper;
+    private AutowireHelperInterface $autowireHelper;
 
     /**
      * {@inheritDoc}
@@ -36,7 +37,7 @@ class EventEmitterPlugin implements DependencyProviderInterface
         $container->register(EventsFacadeInterface::class, function (
             AutowireHelperInterface $autowireHelper,
             LocatorFacadeInterface $locatorFacade,
-        ) {
+        ): EventsFacadeInterface {
             $this->locatorFacade = $locatorFacade;
             $this->autowireHelper = $autowireHelper;
 
@@ -44,17 +45,11 @@ class EventEmitterPlugin implements DependencyProviderInterface
         });
     }
 
-    /**
-     * @return EventsFacadeInterface
-     */
     protected function createFacade(): EventsFacadeInterface
     {
         return new EventsFacade($this->createEventEmitterFactory());
     }
 
-    /**
-     * @return EventEmitterFactoryInterface
-     */
     protected function createEventEmitterFactory(): EventEmitterFactoryInterface
     {
         return new EventEmitterFactory(
@@ -62,9 +57,6 @@ class EventEmitterPlugin implements DependencyProviderInterface
         );
     }
 
-    /**
-     * @return ProviderFactoryInterface
-     */
     protected function createProviderFactory(): ProviderFactoryInterface
     {
         return new ProviderFactory(
@@ -73,9 +65,6 @@ class EventEmitterPlugin implements DependencyProviderInterface
         );
     }
 
-    /**
-     * @return EventListenerClassLocatorFactoryInterface
-     */
     protected function createEventListenerClassLocatorFactory(): EventListenerClassLocatorFactoryInterface
     {
         return new EventListenerClassLocatorFactory(
