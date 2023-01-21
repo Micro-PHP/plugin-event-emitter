@@ -41,4 +41,4 @@ jobs:
           composer-options: "--prefer-dist --no-progress"
 
       - name: "RUn tests"
-        run: "composer coverage-html"
+        run: "composer test"
