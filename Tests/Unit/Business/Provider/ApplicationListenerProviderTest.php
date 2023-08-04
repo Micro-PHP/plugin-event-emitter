@@ -11,10 +11,10 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\EventEmitter\Test\Unit\Business\Provider;
+namespace Micro\Plugin\EventEmitter\Tests\Unit\Business\Provider;
 
 use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
-use Micro\Component\EventEmitter\EventInterface;
+use Micro\Framework\EventEmitter\EventInterface;
 use Micro\Component\EventEmitter\EventListenerInterface;
 use Micro\Plugin\EventEmitter\Business\Provider\ApplicationListenerProvider;
 use PHPUnit\Framework\MockObject\MockObject;

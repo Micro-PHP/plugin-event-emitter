@@ -12,9 +12,9 @@
 namespace Micro\Plugin\EventEmitter;
 
 use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
-use Micro\Component\DependencyInjection\Container;
+use Micro\Framework\DependencyInjection\Container;
 use Micro\Component\EventEmitter\EventEmitterFactoryInterface;
-use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
+use Micro\Framework\BootDependency\Plugin\DependencyProviderInterface;
 use Micro\Plugin\EventEmitter\Business\Facade\EventsFacade;
 use Micro\Plugin\EventEmitter\Business\Factory\EventEmitterFactory;
 use Micro\Plugin\EventEmitter\Business\Locator\EventListenerClassLocatorFactory;

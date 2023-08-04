@@ -12,7 +12,7 @@
 namespace Micro\Plugin\EventEmitter\Business\Provider;
 
 use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
-use Micro\Component\EventEmitter\EventInterface;
+use Micro\Framework\EventEmitter\EventInterface;
 use Micro\Component\EventEmitter\EventListenerInterface;
 use Micro\Component\EventEmitter\ListenerProviderInterface;
 

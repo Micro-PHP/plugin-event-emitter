@@ -13,7 +13,7 @@ namespace Micro\Plugin\EventEmitter\Business\Facade;
 
 use Micro\Component\EventEmitter\EventEmitterFactoryInterface;
 use Micro\Component\EventEmitter\EventEmitterInterface;
-use Micro\Component\EventEmitter\EventInterface;
+use Micro\Framework\EventEmitter\EventInterface;
 use Micro\Plugin\EventEmitter\EventsFacadeInterface;
 
 class EventsFacade implements EventsFacadeInterface

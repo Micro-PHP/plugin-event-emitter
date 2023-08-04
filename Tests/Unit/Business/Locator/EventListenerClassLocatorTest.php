@@ -11,7 +11,7 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\EventEmitter\Test\Unit\Business\Locator;
+namespace Micro\Plugin\EventEmitter\Tests\Unit\Business\Locator;
 
 use Micro\Component\EventEmitter\EventListenerInterface;
 use Micro\Plugin\EventEmitter\Business\Locator\EventListenerClassLocator;

@@ -11,10 +11,10 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\EventEmitter\Test\Unit;
+namespace Micro\Plugin\EventEmitter\Tests\Unit;
 
-use Micro\Component\EventEmitter\EventInterface;
-use Micro\Kernel\App\AppKernel;
+use Micro\Framework\EventEmitter\EventInterface;
+use Micro\Framework\KernelApp\AppKernel;
 use Micro\Plugin\EventEmitter\EventsFacadeInterface;
 use PHPUnit\Framework\TestCase;
 

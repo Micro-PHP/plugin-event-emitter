@@ -11,7 +11,7 @@
 
 namespace Micro\Plugin\EventEmitter;
 
-use Micro\Component\EventEmitter\EventInterface;
+use Micro\Framework\EventEmitter\EventInterface;
 
 interface EventsFacadeInterface
 {
