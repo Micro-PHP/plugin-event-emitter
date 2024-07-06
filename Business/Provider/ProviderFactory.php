@@ -11,21 +11,18 @@
 
 namespace Micro\Plugin\EventEmitter\Business\Provider;
 
-use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
-use Micro\Component\EventEmitter\ListenerProviderInterface;
+use Micro\Framework\Autowire\AutowireHelperInterface;
+use Micro\Framework\EventEmitter\ListenerProviderInterface;
 use Micro\Plugin\EventEmitter\Business\Locator\EventListenerClassLocatorFactoryInterface;
 
-class ProviderFactory implements ProviderFactoryInterface
+readonly class ProviderFactory implements ProviderFactoryInterface
 {
     public function __construct(
-        private readonly AutowireHelperInterface $autowireHelper,
-        private readonly EventListenerClassLocatorFactoryInterface $eventListenerClassLocatorFactory
+        private AutowireHelperInterface $autowireHelper,
+        private EventListenerClassLocatorFactoryInterface $eventListenerClassLocatorFactory
     ) {
     }
 
-    /**
-     *{@inheritDoc}
-     */
     public function create(): ListenerProviderInterface
     {
         $listeners = $this->eventListenerClassLocatorFactory

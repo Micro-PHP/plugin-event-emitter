@@ -11,26 +11,19 @@
 
 namespace Micro\Plugin\EventEmitter\Business\Facade;
 
-use Micro\Component\EventEmitter\EventEmitterFactoryInterface;
-use Micro\Component\EventEmitter\EventEmitterInterface;
+use Micro\Framework\EventEmitter\EventEmitterFactoryInterface;
 use Micro\Framework\EventEmitter\EventInterface;
 use Micro\Plugin\EventEmitter\EventsFacadeInterface;
 
-class EventsFacade implements EventsFacadeInterface
+readonly class EventsFacade implements EventsFacadeInterface
 {
-    private readonly EventEmitterInterface $eventEmitter;
-
     public function __construct(
-        private readonly EventEmitterFactoryInterface $eventEmitterFactory
+        private EventEmitterFactoryInterface $eventEmitterFactory
     ) {
-        $this->eventEmitter = $this->eventEmitterFactory->create();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function emit(EventInterface $event): void
     {
-        $this->eventEmitter->emit($event);
+        $this->eventEmitterFactory->create()->emit($event);
     }
 }

@@ -11,8 +11,8 @@
 
 namespace Micro\Plugin\EventEmitter\Business\Factory;
 
-use Micro\Component\EventEmitter\EventEmitterFactory as BaseEventEmitterFactory;
-use Micro\Component\EventEmitter\EventEmitterInterface;
+use Micro\Framework\EventEmitter\EventEmitterFactory as BaseEventEmitterFactory;
+use Micro\Framework\EventEmitter\EventEmitterInterface;
 use Micro\Plugin\EventEmitter\Business\Provider\ProviderFactoryInterface;
 
 class EventEmitterFactory extends BaseEventEmitterFactory
@@ -22,9 +22,6 @@ class EventEmitterFactory extends BaseEventEmitterFactory
     ) {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function create(): EventEmitterInterface
     {
         $emitter = parent::create();

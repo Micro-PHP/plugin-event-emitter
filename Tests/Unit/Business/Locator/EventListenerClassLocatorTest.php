@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Micro\Plugin\EventEmitter\Tests\Unit\Business\Locator;
 
-use Micro\Component\EventEmitter\EventListenerInterface;
+use Micro\Framework\EventEmitter\EventListenerInterface;
 use Micro\Plugin\EventEmitter\Business\Locator\EventListenerClassLocator;
 use Micro\Plugin\Locator\Facade\LocatorFacadeInterface;
 use PHPUnit\Framework\TestCase;
 
 class EventListenerClassLocatorTest extends TestCase
 {
-    public function testLookupListenerClasses()
+    public function testLookupListenerClasses(): void
     {
         $locatorFacade = $this->createMock(LocatorFacadeInterface::class);
         $locatorFacade->expects($this->once())->method('lookup')->with(EventListenerInterface::class)->willReturn(

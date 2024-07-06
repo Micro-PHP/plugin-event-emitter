@@ -11,12 +11,12 @@
 
 namespace Micro\Plugin\EventEmitter\Business\Provider;
 
-use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
+use Micro\Framework\Autowire\AutowireHelperInterface;
 use Micro\Framework\EventEmitter\EventInterface;
-use Micro\Component\EventEmitter\EventListenerInterface;
-use Micro\Component\EventEmitter\ListenerProviderInterface;
+use Micro\Framework\EventEmitter\EventListenerInterface;
+use Micro\Framework\EventEmitter\ListenerProviderInterface;
 
-class ApplicationListenerProvider implements ListenerProviderInterface
+readonly class ApplicationListenerProvider implements ListenerProviderInterface
 {
     /**
      * @template T of EventListenerInterface
@@ -24,8 +24,8 @@ class ApplicationListenerProvider implements ListenerProviderInterface
      * @param iterable<class-string<T>> $eventListenersClasses
      */
     public function __construct(
-        private readonly AutowireHelperInterface $autowireHelper,
-        private readonly iterable $eventListenersClasses,
+        private AutowireHelperInterface $autowireHelper,
+        private iterable $eventListenersClasses,
     ) {
     }
 
@@ -53,9 +53,6 @@ class ApplicationListenerProvider implements ListenerProviderInterface
         return $this->getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): string
     {
         return 'events.listener_provider.default';

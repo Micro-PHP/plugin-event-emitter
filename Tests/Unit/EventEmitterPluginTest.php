@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 
 class EventEmitterPluginTest extends TestCase
 {
-    public function testPlugin()
+    public function testPlugin(): void
     {
         $kernel = new AppKernel(
             [],

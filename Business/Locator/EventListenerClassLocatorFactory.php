@@ -13,16 +13,13 @@ namespace Micro\Plugin\EventEmitter\Business\Locator;
 
 use Micro\Plugin\Locator\Facade\LocatorFacadeInterface;
 
-class EventListenerClassLocatorFactory implements EventListenerClassLocatorFactoryInterface
+readonly class EventListenerClassLocatorFactory implements EventListenerClassLocatorFactoryInterface
 {
     public function __construct(
-        private readonly LocatorFacadeInterface $locatorFacade
+        private LocatorFacadeInterface $locatorFacade
     ) {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function create(): EventListenerClassLocatorInterface
     {
         return new EventListenerClassLocator(

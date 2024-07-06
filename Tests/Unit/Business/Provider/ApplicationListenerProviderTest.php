@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Micro\Plugin\EventEmitter\Tests\Unit\Business\Provider;
 
-use Micro\Component\DependencyInjection\Autowire\AutowireHelperInterface;
+use Micro\Framework\Autowire\AutowireHelperInterface;
 use Micro\Framework\EventEmitter\EventInterface;
-use Micro\Component\EventEmitter\EventListenerInterface;
+use Micro\Framework\EventEmitter\EventListenerInterface;
 use Micro\Plugin\EventEmitter\Business\Provider\ApplicationListenerProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -42,12 +42,12 @@ class ApplicationListenerProviderTest extends TestCase
         );
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         $this->assertIsString($this->listener->getName());
     }
 
-    public function testGetListenersForEvent()
+    public function testGetListenersForEvent(): void
     {
         $evt = $this->createMock(EventInterface::class);
 
@@ -56,7 +56,7 @@ class ApplicationListenerProviderTest extends TestCase
         }
     }
 
-    public function testGetListenersEmptyForEvent()
+    public function testGetListenersEmptyForEvent(): void
     {
         $evt = new class() implements EventInterface {};
         $empty = [];
@@ -67,13 +67,13 @@ class ApplicationListenerProviderTest extends TestCase
         $this->assertEmpty($empty);
     }
 
-    public function testToString()
+    public function testToString(): void
     {
         $name = $this->listener->getName();
         $this->assertEquals($name, (string) $this->listener);
     }
 
-    public function testGetEventListeners()
+    public function testGetEventListeners(): void
     {
         $events = $this->listener->getEventListeners();
         foreach ($events as $class) {

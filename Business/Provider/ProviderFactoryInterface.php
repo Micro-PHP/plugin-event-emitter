@@ -11,7 +11,7 @@
 
 namespace Micro\Plugin\EventEmitter\Business\Provider;
 
-use Micro\Component\EventEmitter\ListenerProviderInterface;
+use Micro\Framework\EventEmitter\ListenerProviderInterface;
 
 interface ProviderFactoryInterface
 {

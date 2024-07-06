@@ -11,7 +11,7 @@
 
 namespace Micro\Plugin\EventEmitter\Business\Locator;
 
-use Micro\Component\EventEmitter\EventListenerInterface;
+use Micro\Framework\EventEmitter\EventListenerInterface;
 
 interface EventListenerClassLocatorInterface
 {
